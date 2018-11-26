@@ -1,12 +1,12 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Firstname;
-use TheIconic\NameParser\Part\Lastname;
-use TheIconic\NameParser\Part\Initial;
-use TheIconic\NameParser\Part\Salutation;
+use CurioLabs\NameParser\Part\AbstractPart;
+use CurioLabs\NameParser\Part\Firstname;
+use CurioLabs\NameParser\Part\Lastname;
+use CurioLabs\NameParser\Part\Initial;
+use CurioLabs\NameParser\Part\Salutation;
 
 class FirstnameMapper extends AbstractMapper
 {

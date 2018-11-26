@@ -1,9 +1,9 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace CurioLabs\NameParser;
 
 use PHPUnit\Framework\TestCase;
-use TheIconic\NameParser\Language\German;
+use CurioLabs\NameParser\Language\German;
 
 class ParserTest extends TestCase
 {

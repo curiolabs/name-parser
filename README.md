@@ -1,11 +1,11 @@
 # THE ICONIC Name Parser
 
-[![Build Status](https://travis-ci.org/theiconic/name-parser.svg?branch=master&t=201705161308)](https://travis-ci.org/theiconic/name-parser)
-[![Coverage Status](https://coveralls.io/repos/github/theiconic/name-parser/badge.svg?branch=master&t=201705161308)](https://coveralls.io/github/theiconic/name-parser?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/theiconic/name-parser/badges/quality-score.png?b=master&t=201705161308)](https://scrutinizer-ci.com/g/theiconic/name-parser/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/theiconic/name-parser/v/stable?t=201705161308)](https://packagist.org/packages/theiconic/name-parser)
-[![Total Downloads](https://poser.pugx.org/theiconic/name-parser/downloads?t=201705161308)](https://packagist.org/packages/theiconic/name-parser)
-[![License](https://poser.pugx.org/theiconic/name-parser/license?t=201705161308)](https://packagist.org/packages/theiconic/name-parser)
+[![Build Status](https://travis-ci.org/CurioLabs/name-parser.svg?branch=master&t=201705161308)](https://travis-ci.org/CurioLabs/name-parser)
+[![Coverage Status](https://coveralls.io/repos/github/CurioLabs/name-parser/badge.svg?branch=master&t=201705161308)](https://coveralls.io/github/CurioLabs/name-parser?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/CurioLabs/name-parser/badges/quality-score.png?b=master&t=201705161308)](https://scrutinizer-ci.com/g/CurioLabs/name-parser/?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/CurioLabs/name-parser/v/stable?t=201705161308)](https://packagist.org/packages/CurioLabs/name-parser)
+[![Total Downloads](https://poser.pugx.org/CurioLabs/name-parser/downloads?t=201705161308)](https://packagist.org/packages/CurioLabs/name-parser)
+[![License](https://poser.pugx.org/CurioLabs/name-parser/license?t=201705161308)](https://packagist.org/packages/CurioLabs/name-parser)
 
 ## Purpose
 This is a universal, language-independent name parser.
@@ -57,11 +57,11 @@ This parser is able to handle name patterns with and without comma:
 ## Examples
 
 More than 80 different successfully parsed name patterns can be found in the
-[parser unit test](https://github.com/theiconic/name-parser/blob/master/tests/ParserTest.php#L12-L12).
+[parser unit test](https://github.com/CurioLabs/name-parser/blob/master/tests/ParserTest.php#L12-L12).
 
 ## Setup
 ```$xslt
-composer require theiconic/name-parser
+composer require CurioLabs/name-parser
 ```
 
 ## Usage
@@ -70,7 +70,7 @@ composer require theiconic/name-parser
 ```php
 <?php
 
-$parser = new TheIconic\NameParser\Parser();
+$parser = new CurioLabs\NameParser\Parser();
 
 $name = $parser->parse($input);
 
@@ -106,27 +106,27 @@ echo $name->getNickname(true); // (The Giant)
 
 ### Setting Languages
 ```php
-$parser = new TheIconic\NameParser\Parser([
-    new TheIconic\NameParser\Language\English(), //default
-    new TheIconic\NameParser\Language\German(),
+$parser = new CurioLabs\NameParser\Parser([
+    new CurioLabs\NameParser\Language\English(), //default
+    new CurioLabs\NameParser\Language\German(),
 ])
 ```
 
 ### Setting nickname delimiters
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new CurioLabs\NameParser\Parser();
 $parser->setNicknameDelimiters(['(' => ')']);
 ```
 
 ### Setting whitespace characters
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new CurioLabs\NameParser\Parser();
 $parser->setWhitespace("\t _.");
 ```
 
 ### Limiting the position of salutations
 ```php
-$parser = new TheIconic\NameParser\Parser();
+$parser = new CurioLabs\NameParser\Parser();
 $parser->setMaxSalutationIndex(2);
 ```
 This will require salutations to appear within the

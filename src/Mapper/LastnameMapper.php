@@ -1,14 +1,14 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\LanguageInterface;
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Lastname;
-use TheIconic\NameParser\Part\LastnamePrefix;
-use TheIconic\NameParser\Part\Nickname;
-use TheIconic\NameParser\Part\Salutation;
-use TheIconic\NameParser\Part\Suffix;
+use CurioLabs\NameParser\LanguageInterface;
+use CurioLabs\NameParser\Part\AbstractPart;
+use CurioLabs\NameParser\Part\Lastname;
+use CurioLabs\NameParser\Part\LastnamePrefix;
+use CurioLabs\NameParser\Part\Nickname;
+use CurioLabs\NameParser\Part\Salutation;
+use CurioLabs\NameParser\Part\Suffix;
 
 class LastnameMapper extends AbstractMapper
 {

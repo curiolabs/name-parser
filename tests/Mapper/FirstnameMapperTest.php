@@ -1,10 +1,10 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\Salutation;
-use TheIconic\NameParser\Part\Firstname;
-use TheIconic\NameParser\Part\Lastname;
+use CurioLabs\NameParser\Part\Salutation;
+use CurioLabs\NameParser\Part\Firstname;
+use CurioLabs\NameParser\Part\Lastname;
 
 class FirstnameMapperTest extends AbstractMapperTest
 {

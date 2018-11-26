@@ -1,9 +1,9 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Initial;
+use CurioLabs\NameParser\Part\AbstractPart;
+use CurioLabs\NameParser\Part\Initial;
 
 /**
  * single letter, possibly followed by a period

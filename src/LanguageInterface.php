@@ -1,6 +1,6 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace CurioLabs\NameParser;
 
 interface LanguageInterface
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace CurioLabs\NameParser;
 
-use TheIconic\NameParser\Part\AbstractPart;
+use CurioLabs\NameParser\Part\AbstractPart;
 
 class Name
 {
-    private const PARTS_NAMESPACE = 'TheIconic\NameParser\Part';
+    private const PARTS_NAMESPACE = 'CurioLabs\NameParser\Part';
 
     /**
      * @var array the parts that make up this name

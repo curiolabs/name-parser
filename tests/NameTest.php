@@ -1,16 +1,16 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace CurioLabs\NameParser;
 
 use PHPUnit\Framework\TestCase;
-use TheIconic\NameParser\Part\Firstname;
-use TheIconic\NameParser\Part\Initial;
-use TheIconic\NameParser\Part\Lastname;
-use TheIconic\NameParser\Part\LastnamePrefix;
-use TheIconic\NameParser\Part\Middlename;
-use TheIconic\NameParser\Part\Nickname;
-use TheIconic\NameParser\Part\Salutation;
-use TheIconic\NameParser\Part\Suffix;
+use CurioLabs\NameParser\Part\Firstname;
+use CurioLabs\NameParser\Part\Initial;
+use CurioLabs\NameParser\Part\Lastname;
+use CurioLabs\NameParser\Part\LastnamePrefix;
+use CurioLabs\NameParser\Part\Middlename;
+use CurioLabs\NameParser\Part\Nickname;
+use CurioLabs\NameParser\Part\Salutation;
+use CurioLabs\NameParser\Part\Suffix;
 
 class NameTest extends TestCase
 {

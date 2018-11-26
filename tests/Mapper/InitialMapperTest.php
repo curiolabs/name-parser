@@ -1,11 +1,11 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\Language\English;
-use TheIconic\NameParser\Part\Initial;
-use TheIconic\NameParser\Part\Salutation;
-use TheIconic\NameParser\Part\Lastname;
+use CurioLabs\NameParser\Language\English;
+use CurioLabs\NameParser\Part\Initial;
+use CurioLabs\NameParser\Part\Salutation;
+use CurioLabs\NameParser\Part\Lastname;
 
 class InitialMapperTest extends AbstractMapperTest
 {

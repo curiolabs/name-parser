@@ -1,9 +1,9 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
-use TheIconic\NameParser\Part\AbstractPart;
-use TheIconic\NameParser\Part\Nickname;
+use CurioLabs\NameParser\Part\AbstractPart;
+use CurioLabs\NameParser\Part\Nickname;
 
 abstract class AbstractMapper
 {

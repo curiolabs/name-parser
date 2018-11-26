@@ -1,6 +1,6 @@
 <?php
 
-namespace TheIconic\NameParser\Mapper;
+namespace CurioLabs\NameParser\Mapper;
 
 use PHPUnit\Framework\TestCase;
 

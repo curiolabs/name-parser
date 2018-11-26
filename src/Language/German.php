@@ -1,8 +1,8 @@
 <?php
 
-namespace TheIconic\NameParser\Language;
+namespace CurioLabs\NameParser\Language;
 
-use TheIconic\NameParser\LanguageInterface;
+use CurioLabs\NameParser\LanguageInterface;
 
 class German implements LanguageInterface
 {

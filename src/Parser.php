@@ -1,15 +1,15 @@
 <?php
 
-namespace TheIconic\NameParser;
+namespace CurioLabs\NameParser;
 
-use TheIconic\NameParser\Language\English;
-use TheIconic\NameParser\Mapper\NicknameMapper;
-use TheIconic\NameParser\Mapper\SalutationMapper;
-use TheIconic\NameParser\Mapper\SuffixMapper;
-use TheIconic\NameParser\Mapper\InitialMapper;
-use TheIconic\NameParser\Mapper\LastnameMapper;
-use TheIconic\NameParser\Mapper\FirstnameMapper;
-use TheIconic\NameParser\Mapper\MiddlenameMapper;
+use CurioLabs\NameParser\Language\English;
+use CurioLabs\NameParser\Mapper\NicknameMapper;
+use CurioLabs\NameParser\Mapper\SalutationMapper;
+use CurioLabs\NameParser\Mapper\SuffixMapper;
+use CurioLabs\NameParser\Mapper\InitialMapper;
+use CurioLabs\NameParser\Mapper\LastnameMapper;
+use CurioLabs\NameParser\Mapper\FirstnameMapper;
+use CurioLabs\NameParser\Mapper\MiddlenameMapper;
 
 class Parser
 {
@@ -75,6 +75,40 @@ class Parser
         }
 
         return new Name($parts);
+    }
+
+
+    public function gender($name)
+    {
+        $gender = '';
+
+        // Try to derive gender by salutation (Mr, Mrs etc.)
+        if ($name->getSalutation()) {
+            $input = strtoupper($name->getSalutation());
+            $array = $this->languages[0]->getGenderSalutations();
+            foreach ($array as $key => $val) {
+                if ($input == strtoupper($key)) {
+                    $gender = $val;
+                    break;
+                }
+            }
+        }
+
+        // Try to derive gender by first name (Steven, Mark etc.)
+        if ($gender == '') {
+            if ($name->getFirstname()) {
+                $input = strtoupper($name->getFirstname());
+                $array = $this->languages[0]->getGenderFirstnames();
+                foreach ($array as $key => $val) {
+                    if ($input == $key) {
+                        $gender = $val;
+                        break;
+                    }
+                }
+            }
+        }
+
+        return ['gender' => $gender];
     }
 
     /**
@@ -260,6 +294,36 @@ class Parser
         }
 
         return $salutations;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getGenderSalutations()
+    {
+        $salutations = [];
+
+        /** @var LanguageInterface $language */
+        foreach ($this->languages as $language) {
+            $salutations += $language->getGenderSalutations();
+        }
+
+        return $salutations;
+    }
+
+    /**
+     * @return array
+     */
+    protected function getGenderFirstnames()
+    {
+        $firstNames = [];
+
+        /** @var LanguageInterface $language */
+        foreach ($this->languages as $language) {
+            $firstNames += $language->getGenderFirstnames();
+        }
+
+        return $firstNames;
     }
 
     /**

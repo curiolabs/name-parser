@@ -71,6 +71,7 @@ class Name
             'initials' => [],
             'lastname' => [],
             'suffix' => [],
+            'gender' => [],
         ];
 
         foreach ($keys as $key => $args) {
@@ -167,6 +168,16 @@ class Name
     public function getMiddlename(): string
     {
         return $this->export('Middlename');
+    }
+
+    /**
+     * get the gender
+     *
+     * @return string
+     */
+    public function getGender(): string
+    {
+        return $this->export('Gender');
     }
 
     /**

@@ -10,6 +10,7 @@ use CurioLabs\NameParser\Mapper\InitialMapper;
 use CurioLabs\NameParser\Mapper\LastnameMapper;
 use CurioLabs\NameParser\Mapper\FirstnameMapper;
 use CurioLabs\NameParser\Mapper\MiddlenameMapper;
+use CurioLabs\NameParser\Mapper\GenderMapper;
 
 class Parser
 {
@@ -58,7 +59,7 @@ class Parser
      * @param string $name
      * @return Name
      */
-    public function parse($name): Name
+    public function parse($name, $gender = false): Name
     {
         $name = $this->normalize($name);
 
@@ -74,41 +75,12 @@ class Parser
             $parts = $mapper->map($parts);
         }
 
+        if ($gender == true) {
+            $mapper = new GenderMapper($this->languages, $this->getGenderSalutations(), $this->getGenderFirstnames());
+            $parts = $mapper->map($parts);
+        }
+
         return new Name($parts);
-    }
-
-
-    public function gender($name)
-    {
-        $gender = '';
-
-        // Try to derive gender by salutation (Mr, Mrs etc.)
-        if ($name->getSalutation()) {
-            $input = strtoupper($name->getSalutation());
-            $array = $this->languages[0]->getGenderSalutations();
-            foreach ($array as $key => $val) {
-                if ($input == strtoupper($key)) {
-                    $gender = $val;
-                    break;
-                }
-            }
-        }
-
-        // Try to derive gender by first name (Steven, Mark etc.)
-        if ($gender == '') {
-            if ($name->getFirstname()) {
-                $input = strtoupper($name->getFirstname());
-                $array = $this->languages[0]->getGenderFirstnames();
-                foreach ($array as $key => $val) {
-                    if ($input == $key) {
-                        $gender = $val;
-                        break;
-                    }
-                }
-            }
-        }
-
-        return ['gender' => $gender];
     }
 
     /**
@@ -194,6 +166,7 @@ class Parser
                 new LastnameMapper($this->getPrefixes()),
                 new FirstnameMapper(),
                 new MiddlenameMapper(),
+                #new GenderMapper($this->getGenderSalutations(), $this->getGenderFirstnames()),
             ]);
         }
 
